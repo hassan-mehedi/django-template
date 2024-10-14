@@ -8,9 +8,7 @@ For the full list of settings and their config, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from django.utils.translation import gettext_lazy as _
-
-from app.settings.components import BASE_DIR, config
+from app.settings.components import config
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -89,22 +87,6 @@ DATABASES = {
     },
 }
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-USE_I18N = True
-
-LANGUAGES = (
-    ('en', _('English')),
-)
-
-LOCALE_PATHS = (
-    'locale/',
-)
-
 USE_TZ = True
 TIME_ZONE = 'UTC'
 
@@ -132,23 +114,11 @@ TEMPLATES = [{
             # Default template context processors:
             'django.contrib.auth.context_processors.auth',
             'django.template.context_processors.debug',
-            'django.template.context_processors.i18n',
-            'django.template.context_processors.media',
             'django.contrib.messages.context_processors.messages',
             'django.template.context_processors.request',
         ],
     },
 }]
-
-
-# Media files
-# Media root dir is commonly changed in production
-# (see development.py and production.py).
-# https://docs.djangoproject.com/en/4.2/topics/files/
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.joinpath('media')
-
 
 # Django authentication system
 # https://docs.djangoproject.com/en/4.2/topics/auth/
